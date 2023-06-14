@@ -7,10 +7,10 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 export class UsersService {
   constructor(@InjectRepository(User) private repo: Repository<User>) {}
 
-  create(email: string, password: string) {
-    const newUser = this.repo.create({ email, password });
+  async create(email: string, password: string) {
+    const newUser = await this.repo.create({ email, password });
     this.repo.save(newUser);
-    return { data: { id: newUser.id, email: newUser.email } };
+    return newUser;
   }
 
   async find() {

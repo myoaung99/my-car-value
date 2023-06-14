@@ -14,7 +14,7 @@ GET http://localhost:3000/auth/users
 GET http://localhost:3000/auth/1
 
 ### get user by email
-GET http://localhost:3000/auth?email=testing@testing.com
+GET http://localhost:3000/auth?email=tes1ting@testing.com
 
 ### remove user by id
 DELETE  http://localhost:3000/auth/3
@@ -24,5 +24,5 @@ PATCH http://localhost:3000/auth/1
 Content-Type: application/json
 
 {
-    "email": "testing@testing.com"
+    "email": "tes1ting@testing.com"
 }

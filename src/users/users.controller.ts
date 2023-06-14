@@ -12,8 +12,11 @@ import {
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UsersService } from './users.service';
 import { UpdateUserDto } from './dtos/update-user.dto';
+import { UserDto } from './dtos/users.dto';
+import { Serialize } from 'src/interceptors/serialize-interceptor';
 
 @Controller('auth')
+@Serialize(UserDto)
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
@@ -24,7 +27,8 @@ export class UsersController {
 
   @Get('/users')
   async listUsers() {
-    return this.usersService.find();
+    const userList = await this.usersService.find();
+    return userList;
   }
 
   @Get()
@@ -34,7 +38,7 @@ export class UsersController {
     if (!user) {
       throw new NotFoundException('user not found');
     }
-    return { data: user };
+    return user;
   }
 
   @Get('/:slug')
@@ -43,7 +47,7 @@ export class UsersController {
     if (!user) {
       throw new NotFoundException('user not found');
     }
-    return { data: user };
+    return user;
   }
 
   @Patch('/:id')
