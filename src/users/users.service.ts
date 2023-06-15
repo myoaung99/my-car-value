@@ -1,7 +1,11 @@
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './users.entity';
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadGatewayException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
@@ -36,7 +40,11 @@ export class UsersService {
     }
     Object.assign(user, attrs);
     const updatedUser = await this.repo.save(user);
-    return updatedUser;
+
+    if (!updatedUser) {
+      throw new BadGatewayException('User update failed');
+    }
+    return user;
   }
 
   async remove(id: string) {
