@@ -13,7 +13,7 @@ export class UsersService {
 
   async create(email: string, password: string) {
     const newUser = await this.repo.create({ email, password });
-    this.repo.save(newUser);
+    await this.repo.save(newUser);
     return newUser;
   }
 

@@ -1,10 +1,19 @@
-### create user
+### sign in as NEW USER
+POST http://localhost:3000/auth/signup 
+Content-Type: application/json
+
+{
+    "email": "myo11@gmail.com",
+    "password": "12345"
+}
+
+### sign in as EXISTING USER
 POST http://localhost:3000/auth/signin 
 Content-Type: application/json
 
 {
-    "email": "myo3@gmail.com",
-    "password": "1234"
+    "email": "myo11@gmail.com",
+    "password": "12345"
 }
 
 ### get all users
