@@ -12,9 +12,15 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "myo11@gmail.com",
+    "email": "myo10@gmail.com",
     "password": "12345"
 }
+
+### sign out the user
+POST http://localhost:3000/auth/signout
+
+### get current user
+GET http://localhost:3000/auth/currentuser
 
 ### get all users
 GET http://localhost:3000/auth/users
