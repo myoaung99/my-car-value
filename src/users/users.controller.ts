@@ -18,7 +18,6 @@ import { UserDto } from './dtos/users.dto';
 import { Serialize } from 'src/interceptors/serialize-interceptor';
 import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/current-user-decorator';
-import { CurrentUserInterceptor } from './interceptors/current-user-interceptor';
 import { User } from './users.entity';
 import { AuthGuard } from './guards/auth.guard';
 
