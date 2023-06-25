@@ -11,3 +11,19 @@ Content-Type: application/json
     "lat": 37.7749,
     "lon": -122.4194
 }
+
+### Approve Report
+PATCH  http://localhost:3000/reports/6
+Content-Type: application/json
+
+{
+    "approved": true
+}
+
+### Reject Report
+PATCH  http://localhost:3000/reports/6
+Content-Type: application/json
+
+{
+    "approved": false
+}
