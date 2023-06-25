@@ -8,8 +8,8 @@ import { CreateReportDto } from './dtos/create-report.dto';
 export class ReportsService {
   constructor(@InjectRepository(Report) private reports: Repository<Report>) {}
 
-  async create(body: CreateReportDto) {
-    const report = await this.reports.create(body);
-    this.reports.save(report);
+  async create(report: CreateReportDto) {
+    const _report = await this.reports.create(report);
+    return this.reports.save(_report);
   }
 }

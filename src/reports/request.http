@@ -1,0 +1,13 @@
+### Create Report
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+    "make": "toyota",
+    "model": "rush",
+    "year": 2020,
+    "mileage": 10000,
+    "price": 50000,
+    "lat": 37.7749,
+    "lon": -122.4194
+}

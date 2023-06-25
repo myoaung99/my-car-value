@@ -17,6 +17,10 @@ export class Report {
   @Column()
   make: string;
 
+  @IsString()
+  @Column()
+  model: string;
+
   @IsNumber()
   @Min(1930)
   @Max(2050)
@@ -35,7 +39,7 @@ export class Report {
   @Min(0)
   @Max(1000000)
   @Column()
-  milage: number;
+  mileage: number;
 
   @IsNumber()
   @Min(0)
