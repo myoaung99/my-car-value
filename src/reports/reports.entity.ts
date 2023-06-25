@@ -6,7 +6,8 @@ import {
   Max,
   Min,
 } from 'class-validator';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/users/users.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 @Entity()
 export class Report {
@@ -46,4 +47,7 @@ export class Report {
   @Max(10000000)
   @Column()
   price: number;
+
+  @ManyToOne(()=>User, (user)=>user.reports)
+  user: User
 }
