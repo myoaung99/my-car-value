@@ -12,6 +12,9 @@ Content-Type: application/json
     "lon": -122.4194
 }
 
+### Get Estimate
+GET http://localhost:3000/reports?make=toyota&model=rush&year=2020&mileage=1000&lat=0&lon=0
+
 ### Approve Report
 PATCH  http://localhost:3000/reports/6
 Content-Type: application/json
